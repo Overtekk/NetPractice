@@ -51,7 +51,7 @@ todo
 
 ### 📮 Makefile:
 
-todo
+todot
 
 ---
 
