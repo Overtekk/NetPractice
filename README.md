@@ -54,13 +54,44 @@ Then, it's all the same from above.
 
 ## 📥 Submission details
 
+
+---
+
+## 📝 Explanations of concepts
+
+### TCP/IP:
+
+**IP**: *Internet Protocol*.
+
+Internet addresses are made up of a network address and a host (or local) address. This two-part address allows a sender to specify the network as well as a specific host on the network.\
+A unique and official network address is assigned to each network when it connects to other Internet networks.\
+The Internet addressing scheme consists of Internet Protocol (IP) addresses and two special cases of IP addresses: broadcast addresses and loopback addresses.
+
+**TCP**: Transmission Control Protocol *(french: Protocole TCP)*.
+
+Norme of communication that allows programm and computer devices to exchange messages on a network. It was made to send **packages** on the Internet and ensure the success of data transmission and messages on a network.
+
+### Subnet masks
+
+### Default gateways
+
+### Routers and switches
+
+### OSI layers
+
+### Routers
+
+### Switches
+
 ---
 
 ## 📚 Resources
 
-### Documentation
+### Documentation TCP/IP addressing
 | Resource | Description |
 | :------: | :---------: |
+| [IBM](https://www.ibm.com/docs/en/aix/7.3.0?topic=protocol-tcpip-addressing) | Brief topic of what is TCP/IP addressing |
+| [Fortinet (french)](https://www.fortinet.com/fr/resources/cyberglossary/tcp-ip) | Explanation |
 
 ### IA was use to:
 - todo
