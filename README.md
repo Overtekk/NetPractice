@@ -23,43 +23,36 @@
 
 ---
 
-## ✏️ Quick Start
-
-```bash
-make  # install all dependencies and run the script
-
-uv sync  # alternatively you can also use this
-
-uv run python -m src  # Launch with the default value
-```
-> [!NOTE]
-> If you don't have `uv` installed, run `make install`
-
----
-
 ## 📂 Description
 
-todo
-
-### 📜 Summary:
-
-todo
-
-### 📝 Rules:
-
-todo
-
-### 📮 Makefile:
-
-todo
+This project is an introduction to the basics of computer networking. We have a web server to do 10 exercices. Each of those exercices teach us one thing like how IP addresses works, how to connect a device throught a router, what is the role of a gateway.
 
 ---
 
 ## 💡 Instructions
 
+To launch the exercice download the `net_practice.tgz` package **(only available for 42 student)**.\
+One done, run the file `run.sh` using:
+```bash
+./run.sh
+```
+It will launch the web server using your default browser.
+
+You can do two things.
+
+- **Training**: Section to discover the world of computer networking and exercices to do. There are 10 exercices to subit.\
+First thing first, enter your intranet login.\
+Then, you will have to do the exercice (more of that later).\
+You can click on `Check again` to check your current progression (errors, finished).\
+`Get my config` give you the download to your configuration. This is needed for submission.\
+If you have completed the level, click on the `Next level` button.
+
+- **Evaluation**: This section is for the evaluation. Three randoms levels from 6 to 10 will be offered to be solved in 15 minutes.\
+Then, it's all the same from above.
+
 ---
 
-## ⚙️ How it works?
+## 📥 Submission details
 
 ---
 
