@@ -278,7 +278,7 @@ A switch is a **Layer 2** device. It connects multiple devices together within t
 
 <br>
 
-A router is a **Layer 3** device. Its primary job is to connect multiple different networks together and route data packets between them based on their destination IP addresses. A router has multiple interfaces, each configured with an IP address belonging to a different subnet. It uses a** Routing Table** to determine the best path for forwarding packets.
+A router is a **Layer 3** device. Its primary job is to connect multiple different networks together and route data packets between them based on their destination IP addresses. A router has multiple interfaces, each configured with an IP address belonging to a different subnet. It uses a **Routing Table** to determine the best path for forwarding packets.
 
 ### Routing Table
 
