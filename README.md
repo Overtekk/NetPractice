@@ -25,7 +25,7 @@
 
 ## 📂 Description
 
-This project is an introduction to the basics of computer networking. We have a web server to do 10 exercices. Each of those exercices teach us one thing like how IP addresses works, how to connect a device throught a router, what is the role of a gateway.
+This project is an introduction to the basics of computer networking. We use a local web server to complete 10 exercises. Each exercise teaches fundamental concepts, such as configuring IP addresses, connecting devices through a router, and understanding the role of a default gateway within a network.
 
 ---
 
@@ -54,6 +54,8 @@ Then, it's all the same from above.
 
 ## 📥 Submission details
 
+To submit this project, you must export your configuration for all 10 levels using the `Get my config` button.
+You must place these 10 exported configuration files (one file per level) directly at the root of your Git repository
 
 ---
 
@@ -69,18 +71,19 @@ Then, it's all the same from above.
 </p>
 </br>
 
-An IP adress is the **unique identifying number** assigned to every device connected to the internet or to a network. An IP adress definition is a numeric label assigned to devices that use the internet to communicate.
-Its set a suite of rules for packetizing, addressing, transmitting, routing and receiving data over networks.
+An IP address is a **unique identifying number** assigned to every device connected to a network. It serves as a numeric label that allows devices to communicate over the internet or local networks.
+It defines a suite of rules for routing and addressing data packets so they can travel across networks and arrive at the correct destination.
 
-Its purpose is to handle the connection between devices that send and receive data all across the network.\
-IP is unique to every device on the internet. It's an identifier. It allow computing devices to communicate with destinations like websites, streaming services letting the website know who is connecting.
+An IP address has two main parts:
 
-An IP address has two parts. The first part identifies the host (such as the computer), and the other part identifies the network it belongs to. TCP/IP uses a **subnet mask** to separate them.
+1. Network ID: Identifies the specific network the device belongs to.
+
+2. Host ID: Identifies the specific device (node) on that network. TCP/IP uses a subnet mask to separate these two parts.
 
 There are two important types of IP address:
 
-- **Static IP address**: stay permanent and doesn't change. Mostly used for important equipement such as servers for example.
-- **Dynamic IP address**: which changes occasionally. Used for consumer equipement such as computer, smartphone.
+- **Static IP address**: Remains permanent and doesn't change. Used for critical infrastructure like servers or routers.
+- **Dynamic IP address**: Changes occasionally. Assigned dynamically by a Dynamic Host Configuration Protocol (DHCP) server, typically used for consumer equipment such as computers and smartphones.
 
 #### **IP addresses come in 2 versions:**
 
@@ -103,7 +106,7 @@ However, because of the growth of the Internet and the depletion of available IP
 
 ## Public IP vs Private IP
 
-- **Public IP** address can be accessed directly over the internet and is assigned to your network router by your internet service provider (ISP). It helps you connect to the internet from inside your network to outside your network.
+- **Public IP**: Can be accessed directly over the internet. It is assigned to your network router by your Internet Service Provider (ISP).
 
 - **Private IP** address that your network router assigns to your device. Each device within the same network is assigned a unique private IP address (sometines, also called a private network address). This is how devices on the same internal network talk to each other./
 When a network is connected to the internet, it cannot use an IP address from the reserved private IP addresses. The following ranges are reserved for private IP addresses.
@@ -143,22 +146,16 @@ It guarantees the integrity of the data being communicated over a network. Befor
 </p>
 </br>
 
-Its a set of rules that guide and allow computers to communicate on a network such as the internet.
+TCP/IP is the foundational suite of communication protocols used to interconnect network devices on the internet.
 
 The difference between TCP and IP is that those are two separate computer network protocols. **IP** is the part that obtains the address which the data is sent to, while **TCP** is the part that is responsible for data delivery once that IP address has been found.
 
-Its job is to divide the different communication tasks into layers where each layers have a different function. The data goes through **four individual layers** before it's received on the other end. Then, it goes throught these layers in reverse to reassemble the data and represent it to the recipient.
+It simplifies the networking process into four distinct layers:
 
-The four layers are:
-
-- **Datalink Layer / Physical layer**: handles the physical parts of sending and receiving data using the wifi, ethernet, wireless lan...
-
-- **Network Layer**: controls the movement of the packets around the internet.
-
-- **Transport Layer**: provides a reliable data connection between two devices. It divides the data into packets, knows the packets that are received from the other device, and makes sure that the other device knows the packets it receives.
-
-- **Aplication Layer**: it's the group of the application that requires a network communication, which is what the user typically interacts with (like messaging, emails, see a picture or ads).
-
+1. Network Access / Link Layer: Handles the physical hardware connections (Ethernet, Wi-Fi).
+2. Internet Layer: Handles routing and IP addressing (Where does the packet go?).
+3. Transport Layer: Provides reliable data transfer (TCP or UDP).
+4. Application Layer: What the user interacts with (HTTP, FTP, SMTP).
 
 ### Subnet masks
 
@@ -168,18 +165,61 @@ The four layers are:
 </p>
 </br>
 
-A subnet mask is a 32 bits (4 bytes) address used to distinguish between a network address and a host address in the IP address. It defines the range of IP addresses that can be used within a network or a subnet.\
-So its a network inside a network. It make networks more efficient.
+A subnet mask is a 32-bit number used to differentiate the **Network ID** from the **Host ID** within an IP address./
+Where the subnet mask has `255`, the corresponding part of the IP address represents the network. Where the subnet mask has `0`, it represents the specific host.
+
+Example:
+For an IP `192.168.1.15` with a mask of `255.255.255.0`, the network is `192.168.1.0` and the host is `15`./
+Two devices can only communicate directly without a router if they are on the exact same subnet.
 
 ### Default gateways
 
-### Routers and switches
+</br>
+<p align="center">
+	<a href="https://www.geeksforgeeks.org/computer-networks/default-gateway-in-networking/">
+	<img src="assets/default_gateway.jpg" height=300 alt="ip">
+</a>
+</p>
+</br>
+
+A default gateway is the node (usually a router) in a computer network that serves as the forwarding host to other networks. If a device needs to send a packet to an IP address that is outside its own local subnet, it must send it to its default gateway.
+
+Example:
+Your home internet box acts as the default gateway for your personal computer.
 
 ### OSI layers
 
-### Routers
+</br>
+<p align="center">
+	<a href="https://www.network-supply.com/blogs/knowledge/the-osi-model-explained">
+	<img src="assets/osi_layers.png" height=300 alt="ip">
+</a>
+</p>
+</br>
 
-### Switches
+**Open Systems Interconnection**
+
+The OSI model is a conceptual framework used to describe the functions of a networking system. It contains 7 layers, compared to TCP/IP's 4 layers. For this project, we focus mainly on:
+
+- **Layer 2 (Data Link)**: Where Switches operate. It handles data transfer between nodes on the same local network using MAC addresses.
+
+- **Layer 3 (Network)**: Where Routers operate. It handles data routing between different networks using IP addresses.
+
+### Switches & Routers
+
+</br>
+<p align="center">
+	<a href="https://www.cloudflare.com/fr-fr/learning/network-layer/what-is-a-network-switch/">
+	<img src="assets/router_switch.png" height=200 alt="ip">
+</a>
+</p>
+</br>
+
+A switch is a **Layer 2** device. It connects multiple devices together within the same local network (LAN). Unlike a router, a switch does not understand IP addresses. It forwards data only to the specific device that needs it within the local subnet, making local communication highly efficient.
+
+<br>
+
+A router is a **Layer 3** device. Its primary job is to connect multiple different networks together and route data packets between them based on their destination IP addresses. A router has multiple interfaces, each configured with an IP address belonging to a different subnet. It uses a** Routing Table** to determine the best path for forwarding packets.
 
 ---
 
@@ -197,11 +237,30 @@ So its a network inside a network. It make networks more efficient.
 | [IBM](https://www.ibm.com/docs/en/aix/7.3.0?topic=protocol-tcpip-addressing) | Brief topic of what is TCP/IP addressing |
 | [Fortinet (french)](https://www.fortinet.com/fr/resources/cyberglossary/tcp-ip) | Explanation |
 
-### Ipv4 / Ipv6
+### Documentation about Ipv4 / Ipv6
 | Resource | Description |
+| :------: | :---------: |
 | [AVG - Difference between Ipv4/Ipv6 (french)](https://www.avg.com/fr/signal/ipv4-vs-ipv6) | Difference between Ipv4 and Ipv6 protocol |
 
+### Documentation about Default Gateway
+
+| Resource | Description |
+| :------: | :---------: |
+| [Geeksforgeeks - Default gateway](https://www.geeksforgeeks.org/computer-networks/default-gateway-in-networking/) | General explanation of the role of a default gateway in networking |
+
+### Documentation about OSI Layers
+
+| Resource | Description |
+| :------: | :---------: |
+| [Network-Supply - OSI Layers](https://www.network-supply.com/blogs/knowledge/the-osi-model-explained) | Explanation of all layers |
+
+### Documentation about Routers and Switches
+
+| Resource | Description |
+| :------: | :---------: |
+| [Cloudfare - What is a switch](https://www.cloudflare.com/fr-fr/learning/network-layer/what-is-a-network-switch/) | Explanation of switch and router |
+
 ### IA was use to:
-- todo
+- **README checker** - check that the informations and clear, relevant and help me correct syntax.
 
 ---
