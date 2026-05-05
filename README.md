@@ -215,7 +215,7 @@ The OSI model is a conceptual framework used to describe the functions of a netw
 </p>
 </br>
 
-A switch is a **Layer 2** device. It connects multiple devices together within the same local network (LAN). Unlike a router, a switch does not understand IP addresses. It forwards data only to the specific device that needs it within the local subnet, making local communication highly efficient.
+A switch is a **Layer 2** device. It connects multiple devices together within the same local area network (LAN). Unlike a router, a switch does not understand IP addresses. It forwards data only to the specific device that needs it within the local subnet, making local communication highly efficient.
 
 <br>
 
