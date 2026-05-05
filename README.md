@@ -221,6 +221,23 @@ A switch is a **Layer 2** device. It connects multiple devices together within t
 
 A router is a **Layer 3** device. Its primary job is to connect multiple different networks together and route data packets between them based on their destination IP addresses. A router has multiple interfaces, each configured with an IP address belonging to a different subnet. It uses a** Routing Table** to determine the best path for forwarding packets.
 
+### Routing Table
+
+</br>
+<p align="center">
+	<a href="https://github.com/lpaube/NetPractice/blob/main/img/routing_table1.png?raw=true">
+	<img src="assets/routing_table1.png" height=150 alt="ip">
+</a>
+</p>
+</br>
+
+A routing table is a data table stored in a router or a network host that lists the routes to particular network destinations. In NetPractice, the routing table consists of 2 elements:
+
+- **Destination**: The destination specifies a network address on which a host is the end target of the packets. The route of `default` or `0.0.0.0/0`, is the route that takes effect when no other route is available for an IP destination address. The default route will use the next-hop address to send the packets on their way without giving a specific destination. The default route will match any network.
+
+-** Next hop**: The next hop refers to the next closest router a packet can go through. It is the IP address of the next router on the packet's way. Every single router maintains its routing table with a next hop address.
+
+
 ---
 
 ## 📚 Resources
