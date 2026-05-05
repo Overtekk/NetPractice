@@ -117,6 +117,26 @@ When a network is connected to the internet, it cannot use an IP address from th
 10.0.0.0 – 10.255.255.255     (16,777,216 IP addresses)
 ```
 
+While we read IPv4 addresses in a **dot-decimal notation** (like `192.168.1.15`), computers and routers process them entirely in **binary** (0 and 1).
+
+An IPv4 address is exactly **32 bits** long. These 32 bits are divided into 4 sections called **octets** (because each section contains exactly 8 bits) separated by dots.
+
+Each of the 8 bits in an octet represents a power of 2, reading from left to right:
+`128 | 64 | 32 | 16 | 8 | 4 | 2 | 1`
+
+To convert a binary octet to a decimal number, you simply add the values of the positions where there is a `1`.
+
+**Example with the IP `192.168.1.15`:**
+- **192** -> `11000000` *(128 + 64)*
+- **168** -> `10101000` *(128 + 32 + 8)*
+- **1**   -> `00000001` *(1)*
+- **15**  -> `00001111` *(8 + 4 + 2 + 1)*
+
+Therefore, the computer actually sees `192.168.1.15` as:
+`11000000.10101000.00000001.00001111`
+
+Understanding this binary structure is crucial for calculating **Subnet Masks**. Network hardware uses a mathematical process called a "bitwise AND" operation between the binary IP address and the binary Subnet Mask to determine exactly where the Network ID ends and the Host ID begins.
+
 
 ### TCP: Transport Layer
 
@@ -247,6 +267,7 @@ A routing table is a data table stored in a router or a network host that lists 
 | :------: | :---------: |
 | [Github of lpaube](https://github.com/lpaube/NetPractice) | General explanations of the project |
 | [Medium - NetPractice Guide](https://medium.com/@imyzf/netpractice-2d2b39b6cf0a) | General explanations of the project |
+| [Github of caroldaniel](https://github.com/caroldaniel/42sp-cursus-netpractice) | General explanations of the project |
 
 ### Documentation TCP/IP addressing
 | Resource | Description |
