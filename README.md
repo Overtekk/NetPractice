@@ -228,7 +228,7 @@ A subnet mask is a 32-bit number used to differentiate the **Network ID** from t
 Where the subnet mask has `255`, the corresponding part of the IP address represents the network. Where the subnet mask has `0`, it represents the specific host.
 
 Example:
-For an IP `192.168.1.15` with a mask of `255.255.255.0`, the network is `192.168.1.0` and the host is `15`./
+For an IP `192.168.1.15` with a mask of `255.255.255.0`, the network is `192.168.1.0` and the host is `15`.
 Two devices can only communicate directly without a router if they are on the exact same subnet.
 
 ### Default gateways
