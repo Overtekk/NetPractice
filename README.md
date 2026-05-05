@@ -85,7 +85,7 @@ There are two important types of IP address:
 - **Static IP address**: Remains permanent and doesn't change. Used for critical infrastructure like servers or routers.
 - **Dynamic IP address**: Changes occasionally. Assigned dynamically by a Dynamic Host Configuration Protocol (DHCP) server, typically used for consumer equipment such as computers and smartphones.
 
-#### **IP addresses come in 2 versions:**
+### **IP addresses come in 2 versions:**
 
 ## IPv4 vs IPv6
 
@@ -102,7 +102,9 @@ However, because of the growth of the Internet and the depletion of available IP
 
 **Internet Protocol version 6** use 128 bits for the IP address and was standardized in 1998. It has over 340 undecillion addresses, so every device can have it's unique IP address, support auto-configuration and has alphanumeric hexadecimal notation.
 
-**Only IPv4 addresses are used in NetPractice.**
+### **Only IPv4 addresses are used in NetPractice.**
+
+<br>
 
 ## Public IP vs Private IP
 
@@ -116,6 +118,8 @@ When a network is connected to the internet, it cannot use an IP address from th
 172.16.0.0 – 172.31.255.255   (1,048,576 IP addresses)
 10.0.0.0 – 10.255.255.255     (16,777,216 IP addresses)
 ```
+
+## Computer reading
 
 While we read IPv4 addresses in a **dot-decimal notation** (like `192.168.1.15`), computers and routers process them entirely in **binary** (0 and 1).
 
@@ -136,6 +140,41 @@ Therefore, the computer actually sees `192.168.1.15` as:
 `11000000.10101000.00000001.00001111`
 
 Understanding this binary structure is crucial for calculating **Subnet Masks**. Network hardware uses a mathematical process called a "bitwise AND" operation between the binary IP address and the binary Subnet Mask to determine exactly where the Network ID ends and the Host ID begins.
+
+## IPv4 Validity Limits
+
+Since an IPv4 address is made of 4 octets, and each octet is 8 bits long in binary, the decimal value of each octet has a strict mathematical limit.\
+The lowest possible value is `0` (binary `00000000`) and the highest possible value is `255` (binary `11111111`).
+If any number in an IP address is greater than 255 (e.g., `104.93.23.268`), the address is fundamentally invalid and the network configuration will fail.
+
+## Ipv4 Rules
+
+Depending on the hardware linking two devices, the addressing rules change:
+
+1. **Direct connection or via a Switch (Layer 2):** Two devices can only communicate if they belong to the **exact same subnet**. This means their IP addresses must have the exact same Network ID as defined by their Subnet Mask.
+2. **Via a Router (Layer 3):** If two devices have different Network IDs (different subnets), they cannot communicate directly. Their traffic must be sent to a Router (their Default Gateway), which will forward the packet to the correct destination.
+
+### Reserved Addresses: Network and Broadcast
+
+In any given subnet, you cannot use all the available IP addresses for your hosts (computers, router interfaces). Two addresses are always reserved by the system:
+
+- **The Network Address:** This is the very first IP of the subnet (all host bits are set to `0` in binary). It identifies the network itself.
+- **The Broadcast Address:** This is the very last IP of the subnet (all host bits are set to `1` in binary). It is used to send a packet to all devices on that specific subnet simultaneously.
+
+**Example for the subnet `192.168.1.0` with a mask of `255.255.255.0`:**
+- `192.168.1.0` is the Network Address (Cannot be assigned to a host).
+- `192.168.1.1` to `192.168.1.254` are valid Host IPs.
+- `192.168.1.255` is the Broadcast Address (Cannot be assigned to a host).
+
+### CIDR Notation (Slash Notation)
+
+Instead of writing the full subnet mask like `255.255.255.0`, networking often uses **CIDR (Classless Inter-Domain Routing)** notation. It simply counts the number of `1`s in the binary version of the subnet mask.
+
+- `255.0.0.0` = 8 bits set to 1 = **`/8`**
+- `255.255.0.0` = 16 bits set to 1 = **`/16`**
+- `255.255.255.0` = 24 bits set to 1 = **`/24`**
+
+You will often see routing tables using formats like `10.0.0.0/8`. The `/0` seen in default routes (`0.0.0.0/0`) means zero bits are checked, meaning it matches absolutely every IP address.
 
 
 ### TCP: Transport Layer
