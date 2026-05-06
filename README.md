@@ -296,17 +296,43 @@ A routing table is a data table stored in a router or a network host that lists 
 
 - **Next hop**: The next hop refers to the next closest router a packet can go through. It is the IP address of the next router on the packet's way. Every single router maintains its routing table with a next hop address.
 
+---
+
+### 🧠 Reminder
+
+**Private IP**
+- from `10.0.0.0` to `10.255.255.255`
+- from `172.16.0.0` to `172.31.255.255`
+- from `192.168.0.0` to `192.168.255.255`
+
+**Local IP**
+- from `127.0.0.1` to `127.255.255.254`
+
+**CIDR Sheet table**
+
+|     | Address |  Host |     Netmask     |
+|-----|:-------:|:-----:|:---------------:|
+| /30 |    4    |    2  | 255.255.255.252 |
+| /29 |    8    |    6  | 255.255.255.248 |
+| /28 |   16    |   14  | 255.255.255.240 |
+| /27 |   32    |   30  | 255.255.255.224 |
+| /26 |   64    |   62  | 255.255.255.192 |
+| /25 |  128    |  126  | 255.255.255.128 |
+| /24 |  256    |  254  | 255.255.255.0   |
+| /18 |  16384  | 16382 | 255.255.192.0   |
+| /16 |  65536  | 65534 | 255.255.0.0     |
 
 ---
 
 ## 📚 Resources
 
-### General documentation
+### General documentation and inspiration for the form, text and categories of my README
 | Resource | Description |
 | :------: | :---------: |
 | [Github of lpaube](https://github.com/lpaube/NetPractice) | General explanations of the project |
 | [Medium - NetPractice Guide](https://medium.com/@imyzf/netpractice-2d2b39b6cf0a) | General explanations of the project |
 | [Github of caroldaniel](https://github.com/caroldaniel/42sp-cursus-netpractice) | General explanations of the project |
+| [Github of viruskizz](https://github.com/viruskizz/42bangkok-netpractice) | General explanations of the project and hint for a reminder |
 
 ### Documentation TCP/IP addressing
 | Resource | Description |
@@ -336,6 +362,18 @@ A routing table is a data table stored in a router or a network host that lists 
 | Resource | Description |
 | :------: | :---------: |
 | [Cloudfare - What is a switch](https://www.cloudflare.com/fr-fr/learning/network-layer/what-is-a-network-switch/) | Explanation of switch and router |
+
+### Documentation about Subnet Mask
+
+| Resource | Description |
+| :------: | :---------: |
+| [Subnet mask sheet](https://dnsmadeeasy.com/resources/subnet-mask-cheat-sheet) | Cheat sheet reminder for subnet mask |
+
+### Other
+
+| Resource | Description |
+| :------: | :---------: |
+| [CIDR Calculator](https://cidr.xyz/) | CIRD calculator |
 
 ### IA was use to:
 - **README checker** - check that the informations and clear, relevant and help me correct syntax.
